@@ -48,7 +48,7 @@ public class ChairClient extends Client {
     @Override
     public void updatePoll(String msg) {
         if (msg.equals("Chair is good to use.")) {
-            boolean isCooling = false;
+            isWarming = false;
         }
     }
 
