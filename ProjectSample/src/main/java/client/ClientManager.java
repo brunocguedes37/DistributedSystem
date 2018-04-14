@@ -21,26 +21,19 @@ public class ClientManager implements ServiceListener {
     private final DoorClient client = new DoorClient();
     private final ChairClient client2 = new ChairClient();
     private final AirClient client3 = new AirClient();
-    /*private final ProjectorClient client4 = new ProjectorClient();*/
+    private final ProjectorClient client4 = new ProjectorClient();
     
-    /*private ArrayList<Client> clients ;*/
+  
 
     public ClientManager() {
-        /*clients = new ArrayList<>();      
-        clients.add(new DoorClient());
-        clients.add(new AirClient());
-        clients.add(new ChairClient());
-        clients.add(new ProClient());*/
-        
+      
         try {
-             jmdns = JmDNS.create(InetAddress.getLocalHost());
+            jmdns = JmDNS.create(InetAddress.getLocalHost());
             jmdns.addServiceListener(client.getServiceType(), this);
             jmdns.addServiceListener(client2.getServiceType(), this);
             jmdns.addServiceListener(client3.getServiceType(), this);
-            /*jmdns.addServiceListener(client4.getServiceType(), this);*/
-            /*for (Client client : clients) {
-             jmdns.addServiceListener(client.getServiceType(), this);
-            }*/
+            jmdns.addServiceListener(client4.getServiceType(), this);
+           
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,7 +59,7 @@ public class ClientManager implements ServiceListener {
         String name = arg0.getName();
         ServiceInfo newService = null;
         
-        /*for (Client client : clients) {*/
+      
             
             if (client.getServiceType().equals(type) && client.hasMultiple()) {
             if (client.isCurrent(name)) {
@@ -120,7 +113,7 @@ public class ClientManager implements ServiceListener {
             client3.initialized = false;
         }
         
-        /*if (client4.getServiceType().equals(type) && client4.hasMultiple()) {
+        if (client4.getServiceType().equals(type) && client4.hasMultiple()) {
             if (client4.isCurrent(name)) {
                 ServiceInfo[] a = jmdns.list(type);
                 for (ServiceInfo in : a) {
@@ -135,7 +128,7 @@ public class ClientManager implements ServiceListener {
             ui.removePanel(client4.returnUI());
             client4.disable();
             client4.initialized = false;
-        }*/
+        }
          
             
         }
@@ -147,7 +140,6 @@ public class ClientManager implements ServiceListener {
         int port = arg0.getInfo().getPort();
         String type = arg0.getInfo().getType();
         
-       /* for (Client client : clients) {*/
             
             if (client.getServiceType().equals(type) && !client.isInitialized()) {
             client.setUp(address, port);
@@ -181,7 +173,7 @@ public class ClientManager implements ServiceListener {
 
         }
         
-       /*  if (client4.getServiceType().equals(type) && !client4.isInitialized()) {
+        if (client4.getServiceType().equals(type) && !client4.isInitialized()) {
             client4.setUp(address, port);
             ui.addPanel(client4.returnUI(), client4.getName());
             client4.setCurrent(arg0.getInfo());
@@ -190,7 +182,7 @@ public class ClientManager implements ServiceListener {
                 && client4.isInitialized()) {
             client4.addChoice(arg0.getInfo());
 
-        }*/
+        }
     }
             
 
