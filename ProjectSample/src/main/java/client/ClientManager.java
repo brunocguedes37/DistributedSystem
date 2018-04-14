@@ -27,7 +27,7 @@ public class ClientManager implements ServiceListener {
         clients.add(new BedClient());
         clients.add(new AirClient());
         clients.add(new ChairClient());
-        clients.add(new ProClient());
+        clients.add(new ProjectorClient());
         
         try {
              jmdns = JmDNS.create(InetAddress.getLocalHost());
