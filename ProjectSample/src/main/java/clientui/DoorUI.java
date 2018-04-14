@@ -21,11 +21,13 @@ public class DoorUI extends ClientUI {
     @Override
     public void init() {
         super.init();
-        /*String[] door = {"Open", "Close"};*/
+        //String[] door = {"Open", "Close"};
         open = new JButton("Open");
-        close = new JButton("Close");
         scroll.setBounds(5, 40, UIConstants.COMPONENTWIDTH, 300);
         add(new JButton[]{open});
+        
+        close = new JButton("Close");
+        scroll.setBounds(5, 40, UIConstants.COMPONENTWIDTH, 300);
         add(new JButton[]{close});
     }
 
@@ -33,6 +35,8 @@ public class DoorUI extends ClientUI {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == open) {
             parent.open();
+        } else if (e.getSource() == close) {
+            parent.close();
         }
     }
 }
