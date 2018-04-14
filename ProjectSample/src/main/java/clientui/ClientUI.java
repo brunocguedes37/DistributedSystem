@@ -1,6 +1,4 @@
-/*
- * 
- */
+
 package clientui;
 
 import java.awt.Color;
@@ -17,11 +15,17 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import client.Client;
+/*Adding labels and text fiels */
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 
 /**
  * The Class ClientUI.
- *
- * @author dominic
+ * 
+ * Main @author dominic
+ * created based on Dominic's code
+ * @author Bruno and Nuth
  */
 public abstract class ClientUI extends JPanel implements ActionListener {
 
@@ -63,7 +67,29 @@ public abstract class ClientUI extends JPanel implements ActionListener {
             controls.add(in);
         }
     }
-
+     /* Adding  textfield, labels, combo box like for the jbutton above  */
+       public void add(JTextField[] a){
+        for (JTextField in : a){
+            in.addActionListener(this);
+            controls.add(in);
+        }
+    }
+    
+    
+     public void add(JLabel[] a) {
+        for (JLabel in : a) {
+            controls.add(in);
+        }
+    }
+     
+     public void add(JComboBox[] a) {
+        for (JComboBox in : a) {
+            controls.add(in);
+        }
+    } 
+    
+     
+     
     public void addChoices(Vector<String> a) {
         System.out.println("passed to add choices" + a);
         remove(services);
