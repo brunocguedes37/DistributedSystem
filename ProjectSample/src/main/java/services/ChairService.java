@@ -75,19 +75,15 @@ public class ChairService extends Service {
             }
         }
     }
-
-
-
-
+     /**
+     * this is to return message after the action perform.
+     */
         @Override
         public String getStatus
         
             () {
         return "Chair is now processing.. It is " + percentHot + "% ready for you";
         }
-            
-    
-    
 
     
 
