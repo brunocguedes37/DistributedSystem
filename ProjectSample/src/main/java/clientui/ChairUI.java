@@ -32,18 +32,7 @@ public class ChairUI extends ClientUI {
 
     @Override
     public void init() {
-        super.init();
-        /*
-        set = new JButton("Warm the Chair");
-        scroll.setBounds(5, 40, UIConstants.COMPONENTWIDTH, 300);
-        add(new JButton[]{set});
-        
-       //another botton
-        set = new JButton("Cooling Down the Chair");
-        scroll.setBounds(5, 40, UIConstants.COMPONENTWIDTH, 300);
-        add(new JButton[]{set});
-        */
-        
+        super.init();  
         JLabel labletext = new JLabel("Please choose your tempeture");
         add(new JLabel[]{labletext});
         JTextField temset = new JTextField(3);

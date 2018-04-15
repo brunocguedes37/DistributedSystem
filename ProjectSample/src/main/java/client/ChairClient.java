@@ -13,8 +13,8 @@ import clientui.ChairUI;
  */
 public class ChairClient extends Client {
 
-    private final String WARM = "Warm";
-    private boolean isWarming = false;
+    private final String SET = "Set";
+    private boolean isSetting = false;
 
     /**
      * Air Client Constructor.
@@ -29,15 +29,16 @@ public class ChairClient extends Client {
     /**
      * sends a message to warm the chair.
      */
-    public void warm() {
-        if (!isWarming) {
-            String a = sendMessage(WARM);
+    public void set(String set) {
+        if (!isSetting) {
+            String a = sendMessage(SET);
             if (a.equals(OK)) {
-                isWarming = true;
-                ui.updateArea("Chair is Warm");
+                isSetting = true;
+                ui.updateArea("Chair is processing");
+                ui.updateArea(set + "Tempeture");
             }
         } else {
-            ui.updateArea("Chair already Warmed");
+            ui.updateArea("SORRY! your chairs has been set");
         }
     }
 
@@ -48,7 +49,7 @@ public class ChairClient extends Client {
     @Override
     public void updatePoll(String msg) {
         if (msg.equals("Chair is good to use.")) {
-            isWarming = false;
+            isSetting = false;
         }
     }
 
@@ -56,7 +57,7 @@ public class ChairClient extends Client {
     public void disable() {
         super.disable();
         ui = new ChairUI(this);
-        isWarming = false;
+        isSetting = false;
     }
     
 }
