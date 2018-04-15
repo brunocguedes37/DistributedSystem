@@ -21,7 +21,7 @@ public class ChairClient extends Client {
     private boolean isSetting = false;
 
     /**
-     * Air Client Constructor.
+     * Chair Client Constructor.
      */
     public ChairClient() {
         super();
@@ -31,7 +31,7 @@ public class ChairClient extends Client {
     }
 
     /**
-     * sends a message to the chair.
+     * sends a message to the chair when choose PushUP.
      */
      public void chairUp() {
         if (!isChairUp) {
@@ -44,7 +44,9 @@ public class ChairClient extends Client {
             ui.updateArea("Chair already UP");
         }
     }
-    
+    /**
+     * sends a message to the chair when choose PushDown.
+     */
     public void chairDown() {
         if (!isChairDown) {
             String a = sendMessage(chairDown);
@@ -57,7 +59,9 @@ public class ChairClient extends Client {
         }
     }
     
-    
+   /**
+     * sends a message to the chair when choose tempeture function.
+   */
     public void set(String set) {
         if (!isSetting) {
             String a = sendMessage(SET);
@@ -71,9 +75,9 @@ public class ChairClient extends Client {
         }
     }
 
-
-    
-    
+    /**
+     * sends a message to update what the projector does.
+     */
         
     @Override
     public void updatePoll(String msg) {

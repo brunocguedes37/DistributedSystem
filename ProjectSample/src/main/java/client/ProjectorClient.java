@@ -32,7 +32,7 @@ public class ProjectorClient extends Client {
     }
 
     /**
-     * sends a message to projector.
+     * sends a message to the projector when choose to turn ON.
      */
     public void projectorOn() {
         if (!isProjectorOn) {
@@ -45,7 +45,9 @@ public class ProjectorClient extends Client {
             ui.updateArea("Projector already ON");
         }
     }
-    
+    /**
+     * sends a message to the projector when choose to turn OFF.
+     */
     public void projectorOff() {
         if (!isProjectorOff) {
             String a = sendMessage(projectorOff);
@@ -57,7 +59,9 @@ public class ProjectorClient extends Client {
             ui.updateArea("Projector already OFF");
         }
     }
-    
+    /**
+     * sends a message to the projector when choose HDMI.
+     */
     public void projectorHDMI() {
         if (!isProjectorHDMI) {
             String a = sendMessage(projectorOff);
@@ -69,7 +73,9 @@ public class ProjectorClient extends Client {
             ui.updateArea("Projector already CONNECTED");
         }
     }
-    
+    /**
+     * sends a message to the projector when choose VGA.
+     */
     public void projectorVGA() {
         if (!isProjectorVGA) {
             String a = sendMessage(projectorOff);
@@ -81,7 +87,10 @@ public class ProjectorClient extends Client {
             ui.updateArea("Projector already CONNECTED");
         }
     }
-
+    
+    /**
+     * sends a message to update what the projector does.
+     */
     @Override
     public void updatePoll(String msg) {
         if (msg.equals("Projector is ON")) {
