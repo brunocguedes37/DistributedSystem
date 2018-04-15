@@ -1,5 +1,11 @@
 package clientui;
 
+/*
+ * created based on Dominic's ProjectSmaple code
+ * @author x14101629
+ * @author x14104571
+ */
+
 public class UIConstants {
 
     public static final int UIWIDTH = 550;

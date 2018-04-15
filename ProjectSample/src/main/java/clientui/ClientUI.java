@@ -23,9 +23,9 @@ import javax.swing.JTextField;
 /**
  * The Class ClientUI.
  * 
- * Main @author dominic
- * created based on Dominic's code
- * @author Bruno and Nuth
+ * created based on Dominic's ProjectSmaple code
+ * @author x14101629
+ * @author x14104571
  */
 public abstract class ClientUI extends JPanel implements ActionListener {
 

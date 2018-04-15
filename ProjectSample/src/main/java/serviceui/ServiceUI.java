@@ -15,6 +15,12 @@ import javax.swing.JTextArea;
 import services.Service;
 import clientui.UIConstants;
 
+/*
+ * created based on Dominic's ProjectSmaple code
+ * @author x14101629
+ * @author x14104571
+ */
+
 public class ServiceUI extends JFrame {
 
     protected JPanel panel;

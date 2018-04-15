@@ -13,6 +13,17 @@ import javax.swing.JTabbedPane;
 
 import client.ClientManager;
 
+
+/**
+ *ClientManagerUI.
+ * 
+ * 
+ * created based on Dominic's ProjectSmaple code
+ * @author x14101629
+ * @author x14104571
+ */
+
+
 public class ClientManagerUI extends JFrame {
 
     private final JTabbedPane allPanels;

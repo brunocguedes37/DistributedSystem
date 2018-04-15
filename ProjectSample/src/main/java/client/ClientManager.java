@@ -11,8 +11,14 @@ import clientui.ClientManagerUI;
 import java.net.InetAddress;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.ArrayList;
 
+/**
+ * ClientManager
+ * created based on Dominic's ProjectSmaple code
+ * @author x14101629
+ * @author x14104571
+ * 
+ */
 
 public class ClientManager implements ServiceListener {
 
@@ -20,7 +26,7 @@ public class ClientManager implements ServiceListener {
     private JmDNS jmdns;
     private final DoorClient client = new DoorClient();
     private final ChairClient client2 = new ChairClient();
-    private final AirClient client3 = new AirClient();
+    private final AssistentClient client3 = new AssistentClient();
     private final ProjectorClient client4 = new ProjectorClient();
     
   

@@ -13,6 +13,14 @@ import javax.jmdns.ServiceInfo;
 
 import serviceui.ServiceUI;
 
+
+/*
+ * created based on Dominic's ProjectSmaple code
+ * @author x14101629
+ * @author x14104571
+ */
+
+
 public abstract class Service extends Thread {
 
     protected String SERVICE_TYPE;

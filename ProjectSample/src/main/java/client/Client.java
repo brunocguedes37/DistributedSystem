@@ -16,9 +16,12 @@ import clientui.ClientUI;
 
 /**
  * Abstract super class for all clients.
- *
- * @author dominic
+ * 
+ * created based on Dominic's ProjectSmaple code
+ * @author x14101629
+ * @author x14104571
  */
+
 public abstract class Client {
 
     protected ClientUI ui;
@@ -143,7 +146,7 @@ public abstract class Client {
         serverPort = port;
         initialized = true;
         timer = new Timer();
-        timer.scheduleAtFixedRate(new PollServer(), 6000, 20000);
+        timer.scheduleAtFixedRate(new PollServer(), 3000, 20000);
     }
 
     public JPanel returnUI() {

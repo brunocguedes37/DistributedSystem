@@ -4,10 +4,16 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import client.DoorClient;
 
+/**
+ * DoorUI 
+ *
+ * @author x14104571
+ */
+
 public class DoorUI extends ClientUI {
 
     private static final long serialVersionUID = -5318589393275157185L;
-    /* adding button*/
+// adding Jbutton
     private JButton open;
     private JButton close;
     private final DoorClient parent;
@@ -21,13 +27,11 @@ public class DoorUI extends ClientUI {
     @Override
     public void init() {
         super.init();
-        //String[] door = {"Open", "Close"};
         open = new JButton("Open");
         scroll.setBounds(5, 40, UIConstants.COMPONENTWIDTH, 300);
         add(new JButton[]{open});
-        
         close = new JButton("Close");
-        scroll.setBounds(5, 40, UIConstants.COMPONENTWIDTH, 300);
+        scroll.setBounds(10, 30, UIConstants.COMPONENTWIDTH, 200);
         add(new JButton[]{close});
     }
 
