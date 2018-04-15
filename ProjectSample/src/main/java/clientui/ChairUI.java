@@ -32,7 +32,9 @@ public class ChairUI extends ClientUI {
         parent = chairClient;
         init();
     }
-
+    /**
+     * this is to create button in each function in GUI.
+     */
     @Override
     public void init() {
         super.init();  
@@ -57,7 +59,9 @@ public class ChairUI extends ClientUI {
         
         
     }
-
+    /**
+     * this is to code where the button perform.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
