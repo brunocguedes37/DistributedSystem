@@ -14,6 +14,10 @@ import clientui.ChairUI;
 public class ChairClient extends Client {
 
     private final String SET = "Set";
+    private final String chairUp = "UP";
+    private final String chairDown = "DOWN";
+    private boolean isChairUp = false;
+    private boolean isChairDown = false;
     private boolean isSetting = false;
 
     /**
@@ -27,8 +31,33 @@ public class ChairClient extends Client {
     }
 
     /**
-     * sends a message to warm the chair.
+     * sends a message to the chair.
      */
+     public void chairUp() {
+        if (!isChairUp) {
+            String a = sendMessage(chairUp);
+            if (a.equals(OK)) {
+                isChairUp = true;
+                ui.updateArea("Chair is push UP");
+            }
+        } else {
+            ui.updateArea("Chair already UP");
+        }
+    }
+    
+    public void chairDown() {
+        if (!isChairDown) {
+            String a = sendMessage(chairDown);
+            if (a.equals(OK)) {
+                isChairDown = true;
+                ui.updateArea("Chair is push DOWN");
+            }
+        } else {
+            ui.updateArea("Chair already DOWN");
+        }
+    }
+    
+    
     public void set(String set) {
         if (!isSetting) {
             String a = sendMessage(SET);
@@ -50,7 +79,11 @@ public class ChairClient extends Client {
     public void updatePoll(String msg) {
         if (msg.equals("Chair is good to use.")) {
             isSetting = false;
-        }
+        } else if (msg.equals("Chair is UP")) {
+            isChairUp = false;
+        } else if (msg.equals("Chair is DOWN")) {
+            isChairDown = false;
+        } 
     }
 
     @Override

@@ -17,7 +17,8 @@ public class ChairService extends Service {
 
     private final Timer timer;
     private int percentHot;
-
+    private boolean chairUp;
+    private boolean chairDown;
 
 
     public ChairService(String name) {
@@ -31,6 +32,16 @@ public class ChairService extends Service {
     public void performAction(String a) {
         if (a.equals("get_status")) {
             sendBack(getStatus());
+        
+        } else if (a.equals("UP")) {
+            timer.schedule(new RemindTaskChair(), 0, 2000);
+            sendBack("OK");
+            ui.updateArea("Chair is now push UP");
+        } else if (a.equals("DOWN")) {
+            sendBack("OK");
+            ui.updateArea("Chair is push DOWN");
+      
+            
         } else if (a.equals("Set")) {
             timer.schedule(new RemindTaskSet(), 0, 1000);
             sendBack("OK");
@@ -41,6 +52,20 @@ public class ChairService extends Service {
 
     }
 
+    //try 
+    class RemindTaskChair extends TimerTask {
+
+        @Override
+        public void run() {
+            if (chairUp = true) {
+                chairDown = false;
+            } else if (chairDown = true) {
+                       chairUp = false;
+            }           
+        }
+    }
+    
+    
     class RemindTaskSet extends TimerTask {
 
         @Override
