@@ -26,7 +26,9 @@ public class ProjectorUI extends ClientUI {
         parent = projectorClient;
         init();
     }
-
+    /**
+     * this is to create button in each function in GUI.
+     */
     @Override
     public void init() {
         super.init();
@@ -43,7 +45,9 @@ public class ProjectorUI extends ClientUI {
         scroll.setBounds(5, 40, UIConstants.COMPONENTWIDTH, 300);
         add(new JButton[]{projectorVGA});
     }
-
+    /**
+     * this is to code where the button perform.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == projectorOn) {
